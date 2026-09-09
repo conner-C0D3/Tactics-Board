@@ -1,0 +1,1148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1758" height="1272" viewBox="0 0 1758 1272">
+  <style>.stop-hit{fill:transparent}</style>
+  <defs><clipPath id="cl0"><rect width="420" height="553"/></clipPath><clipPath id="cl1"><rect width="420" height="553"/></clipPath><clipPath id="cl2"><rect width="420" height="553"/></clipPath><clipPath id="cl3"><rect width="420" height="553"/></clipPath><clipPath id="cl4"><rect width="420" height="553"/></clipPath><clipPath id="cl5"><rect width="420" height="553"/></clipPath><clipPath id="cl6"><rect width="420" height="553"/></clipPath><clipPath id="cl7"><rect width="420" height="553"/></clipPath></defs>
+  <rect width="100%" height="100%" fill="#0f1c14"/>
+  <text x="18" y="27" fill="#cfe8d6" font-family="sans-serif" font-size="17" font-weight="700">Formation units defending a moving ball — real app markup, mid-playback</text>
+  <text x="18" y="1262" fill="#7f9d88" font-family="sans-serif" font-size="12">Bottom row: every unit on the same policy, with the ball high and wide — the opening position.</text><g transform="translate(18 58)">
+      <g clip-path="url(#cl0)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p0" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p0" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p0" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p0" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p0)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p0)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u2" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="112.00" x2="19.00" y2="112.00"></line>
+             <text x="19.00" y="112.00" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u7" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="62.50" y1="43.00" x2="62.50" y2="181.00"></line>
+             <text x="62.50" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u12" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="127.00" y1="43.00" x2="127.00" y2="181.00"></line>
+             <text x="127.00" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u15" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="91.00" x2="188.50" y2="133.00"></line>
+             <text x="188.50" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p0)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p0)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i1_p0" data-type="keeper" transform="translate(19 112) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i3_p0" data-type="playerBlue" transform="translate(62.5 43) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i4_p0" data-type="playerBlue" transform="translate(62.5 88) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i5_p0" data-type="playerBlue" transform="translate(62.5 136) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i6_p0" data-type="playerBlue" transform="translate(62.5 181) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i8_p0" data-type="playerBlue" transform="translate(127 43) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i9_p0" data-type="playerBlue" transform="translate(127 88) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i10_p0" data-type="playerBlue" transform="translate(127 136) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i11_p0" data-type="playerBlue" transform="translate(127 181) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i13_p0" data-type="playerBlue" transform="translate(188.5 91) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i14_p0" data-type="playerBlue" transform="translate(188.5 133) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">4-4-2 holding a block — at rest, before kick-off</text>
+    </g><g transform="translate(452 58)">
+      <g clip-path="url(#cl1)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p1" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p1" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p1" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p1)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p1)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u2" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="95.13" x2="19.00" y2="95.13"></line>
+             <text x="19.00" y="95.13" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u7" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="97.78" y1="2.50" x2="97.78" y2="140.50"></line>
+             <text x="97.78" y="71.50" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u12" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="143.50" y1="9.25" x2="143.50" y2="147.25"></line>
+             <text x="143.50" y="78.25" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u15" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="70.75" x2="188.50" y2="112.75"></line>
+             <text x="188.50" y="91.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p1)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p1)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i1_p1" data-type="keeper" transform="translate(19 95.125) rotate(75.11773360105482)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i3_p1" data-type="playerBlue" transform="translate(97.78 2.5) rotate(110.60324107341734)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i4_p1" data-type="playerBlue" transform="translate(97.78 47.5) rotate(88.46181487800067)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i5_p1" data-type="playerBlue" transform="translate(97.78 95.5) rotate(65.46337866684951)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i6_p1" data-type="playerBlue" transform="translate(97.78 140.5) rotate(49.327826102190414)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i8_p1" data-type="playerBlue" transform="translate(143.5 9.25) rotate(118.1062698208019)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i9_p1" data-type="playerBlue" transform="translate(143.5 54.25) rotate(81.59662890943918)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i10_p1" data-type="playerBlue" transform="translate(143.5 102.25) rotate(48.81407483429035)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i11_p1" data-type="playerBlue" transform="translate(143.5 147.25) rotate(32.714083919003336)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i13_p1" data-type="playerBlue" transform="translate(188.5 70.75) rotate(38.659808254090095)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i14_p1" data-type="playerBlue" transform="translate(188.5 112.75) rotate(17.10272896905237)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="209.5" cy="44.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="209.5" cy="44.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="209.5" cy="44.5" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">4-4-2 holding a block — 0.0s — the ball is already out wide</text>
+    </g><g transform="translate(886 58)">
+      <g clip-path="url(#cl2)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p2" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p2" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p2" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p2)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p2)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u2" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="110.97" x2="19.00" y2="110.97"></line>
+             <text x="19.00" y="110.97" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u7" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="90.95" y1="34.20" x2="90.95" y2="172.20"></line>
+             <text x="90.95" y="103.20" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u12" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="138.49" y1="38.97" x2="138.49" y2="164.02"></line>
+             <text x="138.49" y="101.49" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u15" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="82.16" x2="188.50" y2="124.16"></line>
+             <text x="188.50" y="103.16" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p2)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p2)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i1_p2" data-type="keeper" transform="translate(19 110.97347979859913) rotate(90.42637592103036)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i3_p2" data-type="playerBlue" transform="translate(90.95296254829576 34.196959597198266) rotate(133.49225628012684)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i4_p2" data-type="playerBlue" transform="translate(90.95296254829576 79.19695959719826) rotate(111.84274211428531)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i5_p2" data-type="playerBlue" transform="translate(90.95296254829576 127.19695959719826) rotate(79.59867003074939)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i6_p2" data-type="playerBlue" transform="translate(90.95296254829576 172.19695959719826) rotate(53.8171791648896)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i8_p2" data-type="playerBlue" transform="translate(138.49350586875022 38.972338477007234) rotate(154.68796405805682)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i9_p2" data-type="playerBlue" transform="translate(138.49350586875022 79.74762014718429) rotate(133.09871481861674)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i10_p2" data-type="playerBlue" transform="translate(138.49350586875022 123.24125392870648) rotate(72.17953458668127)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i11_p2" data-type="playerBlue" transform="translate(138.49350586875022 164.01653559888354) rotate(33.688582881724514)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i13_p2" data-type="playerBlue" transform="translate(188.5 82.16090545499137) rotate(-152.77898950138365)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i14_p2" data-type="playerBlue" transform="translate(188.5 124.16090545499137) rotate(-51.99899213735168)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="173.0891335909107" cy="112.12018047402299" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="173.0891335909107" cy="112.12018047402299" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="173.0891335909107" cy="112.12018047402299" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">4-4-2 holding a block — 1.6s</text>
+    </g><g transform="translate(1320 58)">
+      <g clip-path="url(#cl3)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p3" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p3" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p3" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p3)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p3)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u2" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="127.88" x2="19.00" y2="127.88"></line>
+             <text x="19.00" y="127.88" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u7" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="82.21" y1="76.06" x2="82.21" y2="211.48"></line>
+             <text x="82.21" y="143.77" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u12" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="131.21" y1="74.27" x2="131.21" y2="196.34"></line>
+             <text x="131.21" y="135.30" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u15" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="102.45" x2="188.50" y2="144.45"></line>
+             <text x="188.50" y="123.45" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p3)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p3)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i1_p3" data-type="keeper" transform="translate(19 127.87852491710484) rotate(113.7835049250133)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i3_p3" data-type="playerBlue" transform="translate(82.21435461011436 76.05908141497409) rotate(152.28699501147437)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i4_p3" data-type="playerBlue" transform="translate(82.21435461011436 120.21776824104225) rotate(137.5410987011043)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i5_p3" data-type="playerBlue" transform="translate(82.21435461011436 167.32036752218164) rotate(102.8461042106001)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i6_p3" data-type="playerBlue" transform="translate(82.21435461011436 211.47905434824983) rotate(59.76862528356923)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i8_p3" data-type="playerBlue" transform="translate(131.21133258693237 74.26740840214684) rotate(177.03286756148813)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i9_p3" data-type="playerBlue" transform="translate(131.21133258693237 114.07422505832724) rotate(175.2409018160707)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i10_p3" data-type="playerBlue" transform="translate(131.21133258693237 156.53482949158635) rotate(166.74354997127998)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i11_p3" data-type="playerBlue" transform="translate(131.21133258693237 196.34164614776677) rotate(18.22712316064281)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i13_p3" data-type="playerBlue" transform="translate(188.5 102.44695959719822) rotate(-146.1599333563836)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i14_p3" data-type="playerBlue" transform="translate(188.5 144.4469595971982) rotate(-124.25697906963899)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="136.67826718182147" cy="179.7403609480458" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="136.67826718182147" cy="179.7403609480458" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="136.67826718182147" cy="179.7403609480458" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">4-4-2 holding a block — 3.2s</text>
+    </g><g transform="translate(18 651)">
+      <g clip-path="url(#cl4)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p4" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p4" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p4" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p4)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p4)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u17" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="112.00" x2="19.00" y2="112.00"></line>
+             <text x="19.00" y="112.00" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u22" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="62.50" y1="43.00" x2="62.50" y2="181.00"></line>
+             <text x="62.50" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u27" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="127.00" y1="43.00" x2="127.00" y2="181.00"></line>
+             <text x="127.00" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u30" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="91.00" x2="188.50" y2="133.00"></line>
+             <text x="188.50" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p4)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p4)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i16_p4" data-type="keeper" transform="translate(19 112) rotate(70.48920055628672)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i18_p4" data-type="playerBlue" transform="translate(62.5 43) rotate(90.58463052070519)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i19_p4" data-type="playerBlue" transform="translate(62.5 88) rotate(73.51554681046434)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i20_p4" data-type="playerBlue" transform="translate(62.5 136) rotate(58.099843082266275)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i21_p4" data-type="playerBlue" transform="translate(62.5 181) rotate(47.12109639666145)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i23_p4" data-type="playerBlue" transform="translate(127 43) rotate(91.04162667600997)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i24_p4" data-type="playerBlue" transform="translate(127 88) rotate(62.19854122006587)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i25_p4" data-type="playerBlue" transform="translate(127 136) rotate(42.039063865836255)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i26_p4" data-type="playerBlue" transform="translate(127 181) rotate(31.14858098619501)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i28_p4" data-type="playerBlue" transform="translate(188.5 91) rotate(24.304549265936718)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i29_p4" data-type="playerBlue" transform="translate(188.5 133) rotate(13.34872711328738)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="209.5" cy="44.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="209.5" cy="44.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="209.5" cy="44.5" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">Hold shape — the marks, untouched</text>
+    </g><g transform="translate(452 651)">
+      <g clip-path="url(#cl5)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p5" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p5" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p5" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p5)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p5)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u32" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="112.00" x2="19.00" y2="112.00"></line>
+             <text x="19.00" y="112.00" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u37" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="62.50" y1="-4.25" x2="62.50" y2="133.75"></line>
+             <text x="62.50" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u42" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="127.00" y1="-4.25" x2="127.00" y2="133.75"></line>
+             <text x="127.00" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u45" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="188.50" y1="43.75" x2="188.50" y2="85.75"></line>
+             <text x="188.50" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p5)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p5)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i31_p5" data-type="keeper" transform="translate(19 112) rotate(70.48920055628672)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i33_p5" data-type="playerBlue" transform="translate(62.5 -4.25) rotate(108.34720650328379)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i34_p5" data-type="playerBlue" transform="translate(62.5 40.75) rotate(91.46131009088124)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i35_p5" data-type="playerBlue" transform="translate(62.5 88.75) rotate(73.24713315226303)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i36_p5" data-type="playerBlue" transform="translate(62.5 133.75) rotate(58.73626830562257)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i38_p5" data-type="playerBlue" transform="translate(127 -4.25) rotate(120.57922687248902)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i39_p5" data-type="playerBlue" transform="translate(127 40.75) rotate(92.60256220249981)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i40_p5" data-type="playerBlue" transform="translate(127 88.75) rotate(61.79250912098471)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i41_p5" data-type="playerBlue" transform="translate(127 133.75) rotate(42.749359102962465)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i43_p5" data-type="playerBlue" transform="translate(188.5 43.75) rotate(92.04540848888723)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i44_p5" data-type="playerBlue" transform="translate(188.5 85.75) rotate(26.980230718222852)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="209.5" cy="44.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="209.5" cy="44.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="209.5" cy="44.5" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">Slide across — width only</text>
+    </g><g transform="translate(886 651)">
+      <g clip-path="url(#cl6)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p6" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p6" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p6" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p6)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p6)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u47" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="112.00" x2="19.00" y2="112.00"></line>
+             <text x="19.00" y="112.00" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u52" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="103.66" y1="43.00" x2="103.66" y2="181.00"></line>
+             <text x="103.66" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u57" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="150.10" y1="43.00" x2="150.10" y2="181.00"></line>
+             <text x="150.10" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u60" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="194.38" y1="91.00" x2="194.38" y2="133.00"></line>
+             <text x="194.38" y="112.00" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p6)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p6)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i46_p6" data-type="keeper" transform="translate(19 112) rotate(70.48920055628672)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i48_p6" data-type="playerBlue" transform="translate(103.66 43) rotate(90.81196065654107)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i49_p6" data-type="playerBlue" transform="translate(103.66 88) rotate(67.65744880395093)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i50_p6" data-type="playerBlue" transform="translate(103.66 136) rotate(49.156176524627654)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i51_p6" data-type="playerBlue" transform="translate(103.66 181) rotate(37.78944938821749)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i53_p6" data-type="playerBlue" transform="translate(150.1 43) rotate(91.44655568657392)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i54_p6" data-type="playerBlue" transform="translate(150.1 88) rotate(53.78381556240066)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i55_p6" data-type="playerBlue" transform="translate(150.1 136) rotate(32.99084024822975)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i56_p6" data-type="playerBlue" transform="translate(150.1 181) rotate(23.516981353747216)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i58_p6" data-type="playerBlue" transform="translate(194.38 91) rotate(18.01251960846717)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i59_p6" data-type="playerBlue" transform="translate(194.38 133) rotate(9.695230597946143)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="209.5" cy="44.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="209.5" cy="44.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="209.5" cy="44.5" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">Drop and push — depth only, damped</text>
+    </g><g transform="translate(1320 651)">
+      <g clip-path="url(#cl7)">
+        <g transform="scale(1.98076) translate(-1 35)">
+  <defs>
+    <linearGradient id="grass-big_p7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big_p7" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big_p7" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+    <!-- Runs get their own, slimmer head in white. A coach reading the picture has
+         to be able to tell at a glance which line is the ball and which is a person,
+         and colour alone does that faster than following the line to its source. -->
+    <marker id="run-big_p7" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="3.2" markerHeight="3.2" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff"></path>
+    </marker>
+  </defs>
+
+  <!-- Grass and grid run edge to edge across the whole working area, surround
+       included: the space outside the touchlines is somewhere to stage kit, not
+       a decorative border. The pattern is anchored at ORIGIN and tiles outward,
+       so the surround squares line up with the pitch squares for free. -->
+  <rect class="area" x="1" y="-35" width="342" height="279" fill="url(#grass-big_p7)"></rect>
+  <rect x="1" y="-35" width="342" height="279" fill="url(#grid-big_p7)"></rect>
+  <!-- the touchline: the only thing that distinguishes pitch from surround -->
+  <rect class="pitch" x="10" y="10" width="324" height="204" fill="none" stroke="#ffffff" stroke-width="1"></rect>
+
+  <!-- the two goal ends, mirrored -->
+  <rect x="10" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="10" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="46" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 64 88.75 A 29.4034 29.4034 0 0 1 64 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+  <rect x="280" y="52" width="54" height="120" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></rect><rect x="316" y="88" width="18" height="48" stroke="rgba(255,255,255,0.92)" stroke-width="0.6" fill="none"></rect><circle cx="298" cy="112" r="1" fill="rgba(255,255,255,0.95)"></circle><path d="M 280 88.75 A 29.4034 29.4034 0 0 0 280 135.25" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></path>
+
+  <!-- centre -->
+  <line x1="172" y1="10" x2="172" y2="214" stroke="rgba(255,255,255,0.92)" stroke-width="1"></line>
+  <circle cx="172" cy="112" r="30" stroke="rgba(255,255,255,0.92)" stroke-width="0.8" fill="none"></circle>
+  <circle cx="172" cy="112" r="1.5" fill="rgba(255,255,255,0.95)"></circle>
+
+  <g class="ref-lines"><line x1="10" y1="52" x2="334" y2="52" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="10" y1="172" x2="334" y2="172" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="88" x2="280" y2="88" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="64" y1="136" x2="280" y2="136" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none"></line><line x1="118" y1="10" x2="118" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line><line x1="226" y1="10" x2="226" y2="214" stroke="rgba(255,255,255,0.72)" stroke-width="0.55" stroke-dasharray="2.5 2.5" fill="none" data-cross="1"></line></g>
+
+  <g class="tape-layer"></g>
+  <!-- Under the runs and the ball: a unit hull is the ground a block covers, so
+       it reads as territory rather than as another line drawn on top. -->
+  <g class="unit-layer"><g class="unit on" data-unit="u62" fill="#7dd3fc" fill-opacity="0.14" stroke="#7dd3fc" stroke-opacity="0.85" stroke-width="0.5" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="19.00" y1="112.00" x2="19.00" y2="112.00"></line>
+             <text x="19.00" y="112.00" fill="#7dd3fc" fill-opacity="0.95" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Keeper</text></g><g class="unit" data-unit="u67" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="165.40" y1="24.73" x2="165.40" y2="104.77"></line>
+             <text x="165.40" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Back four</text></g><g class="unit" data-unit="u72" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="184.75" y1="24.73" x2="184.75" y2="104.77"></line>
+             <text x="184.75" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Midfield four</text></g><g class="unit" data-unit="u75" fill="#7dd3fc" fill-opacity="0.07" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="0.34" stroke-dasharray="2 1.4" stroke-linejoin="round" stroke-linecap="round"><line x1="203.20" y1="52.57" x2="203.20" y2="76.93"></line>
+             <text x="203.20" y="64.75" fill="#7dd3fc" fill-opacity="0.55" stroke="none" font-size="2.6" text-anchor="middle" style="pointer-events:none">Front two</text></g></g>
+  <g class="run-layer"></g>
+  <g class="path-layer"><line x1="208.55" y1="46.26" x2="126.45" y2="198.74" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p7)" opacity="0.95"></line><line x1="124.53" y1="198.75" x2="81.47" y2="121.25" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big_p7)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="207.1" cy="42.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="207.1" y="42.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="207.1" cy="42.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="123.1" cy="198.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="123.1" y="198.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="123.1" cy="198.1" r="2.6"></circle>
+     </g><g data-stop="2">
+       <circle cx="78.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="78.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">3</text>
+       <circle class="stop-hit" cx="78.1" cy="117.1" r="2.6"></circle>
+     </g></g>
+  <g class="item-layer"><g class="item" data-id="i61_p7" data-type="keeper" transform="translate(19 112) rotate(70.48920055628672)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#16a34a" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i63_p7" data-type="playerBlue" transform="translate(165.39999999999998 24.72999999999999) rotate(114.14666108418879)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i64_p7" data-type="playerBlue" transform="translate(165.39999999999998 50.83) rotate(81.83170410264003)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><g class="item" data-id="i65_p7" data-type="playerBlue" transform="translate(165.39999999999998 78.67) rotate(52.23040392995238)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">3</text></g><g class="item" data-id="i66_p7" data-type="playerBlue" transform="translate(165.39999999999998 104.77000000000001) rotate(36.1932073055647)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">4</text></g><g class="item" data-id="i68_p7" data-type="playerBlue" transform="translate(184.75 24.72999999999999) rotate(128.61743599475878)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">5</text></g><g class="item" data-id="i69_p7" data-type="playerBlue" transform="translate(184.75 50.83) rotate(75.65369980060561)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">6</text></g><g class="item" data-id="i70_p7" data-type="playerBlue" transform="translate(184.75 78.67) rotate(35.916549965257815)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">7</text></g><g class="item" data-id="i71_p7" data-type="playerBlue" transform="translate(184.75 104.77000000000001) rotate(22.325605925428142)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">8</text></g><g class="item" data-id="i73_p7" data-type="playerBlue" transform="translate(203.2 52.56999999999999) rotate(37.97805998723455)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">9</text></g><g class="item" data-id="i74_p7" data-type="playerBlue" transform="translate(203.2 76.93) rotate(10.993609923888995)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">10</text></g></g>
+  <g class="play-layer"><circle cx="209.5" cy="44.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="209.5" cy="44.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="209.5" cy="44.5" r="0.42" fill="#1a1a1a"></circle></g>
+  <g class="sel-layer"></g>
+  <g class="ghost-layer"></g>
+</g>
+      </g>
+      <rect width="420" height="553" fill="none" stroke="#2f5c3c"/>
+      <text x="210" y="571" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">Press the ball — all of it, and it squeezes</text>
+    </g></svg>

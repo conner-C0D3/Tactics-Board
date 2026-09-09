@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tactics Simulator</title>
+  <style>
+    :root {
+      --bg: #0f1310;
+      --surface-1: #171c18;
+      --surface-2: #1f2620;
+      --surface-3: #2a332b;
+      --line: #37423a;
+      --text: #e8efe9;
+      --muted: #94a89a;
+      --accent: #4ade80;
+      --accent-dim: #22c55e;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* ---------- header ---------- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      background: var(--surface-1);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hamburger {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      color: var(--text);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .brand {
+      font-weight: 650;
+      letter-spacing: 0.2px;
+      font-size: 18px;
+    }
+
+    .header-spacer {
+      flex: 1;
+    }
+
+    /* ---------- layout ---------- */
+    .main {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ---------- sidebar ---------- */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 46px;
+      bottom: 0;
+      width: 240px;
+      background: var(--surface-1);
+      border-right: 1px solid var(--line);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 100;
+      overflow-y: auto;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-item {
+      display: block;
+      padding: 12px 16px;
+      color: var(--text);
+      text-decoration: none;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .sidebar-item:hover {
+      background: var(--surface-2);
+    }
+
+    .sidebar-item.active {
+      background: var(--surface-3);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .sidebar-sep {
+      height: 1px;
+      background: var(--line);
+      margin: 8px 0;
+    }
+
+    /* ---------- overlay ---------- */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 99;
+    }
+
+    .overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ---------- content ---------- */
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .content-header {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- plans grid ---------- */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .plan-card {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .plan-card:hover {
+      background: var(--surface-3);
+      border-color: var(--accent);
+    }
+
+    .plan-name {
+      font-weight: 600;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .plan-info {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .plan-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .plan-btn {
+      flex: 1;
+      padding: 6px 12px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: var(--surface-1);
+      color: var(--text);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .plan-btn:hover {
+      background: var(--surface-2);
+      border-color: var(--accent);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--accent-dim);
+      color: #07130b;
+      border: none;
+      border-radius: 7px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="brand">Tactics Simulator</div>
+      <div class="header-spacer"></div>
+    </div>
+
+    <div class="main">
+      <div class="overlay" id="overlay"></div>
+
+      <nav class="sidebar" id="sidebar">
+        <a href="index.html" class="sidebar-item active">Home</a>
+        <a href="#myteam" class="sidebar-item">My Team</a>
+        <a href="#equipment" class="sidebar-item">Equipment</a>
+        <a href="#settings" class="sidebar-item">Settings</a>
+        <div class="sidebar-sep"></div>
+        <a href="soccer-field-planner.html" class="sidebar-item">Field Generator</a>
+      </nav>
+
+      <div class="content" id="content">
+        <div class="content-header">Your Training Plans</div>
+
+        <div class="plans-grid" id="plansGrid">
+          <!-- plans will be loaded here -->
+        </div>
+
+        <div class="empty-state" id="emptyState" style="display:none">
+          <div class="empty-icon">📋</div>
+          <div>No training plans yet</div>
+          <a href="soccer-field-planner.html" class="cta-button">Create Your First Plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const plansGrid = document.getElementById("plansGrid");
+    const emptyState = document.getElementById("emptyState");
+
+    // Toggle sidebar
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("visible");
+      hamburger.classList.toggle("open");
+    });
+
+    // Close sidebar when clicking overlay or a link
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("open");
+      overlay.classList.remove("visible");
+      hamburger.classList.remove("open");
+    });
+
+    sidebar.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (!link.href.endsWith("index.html")) {
+          // Keep sidebar open for anchor links
+          return;
+        }
+        sidebar.classList.remove("open");
+        overlay.classList.remove("visible");
+        hamburger.classList.remove("open");
+      });
+    });
+
+    // Load plans from localStorage
+    function loadPlans() {
+      try {
+        // Get all saved sessions from the field planner
+        const sessionsJSON = localStorage.getItem("sessions");
+        if (!sessionsJSON) {
+          emptyState.style.display = "block";
+          return;
+        }
+
+        const sessions = JSON.parse(sessionsJSON);
+        if (!sessions || Object.keys(sessions).length === 0) {
+          emptyState.style.display = "block";
+          return;
+        }
+
+        plansGrid.innerHTML = "";
+        emptyState.style.display = "none";
+
+        Object.entries(sessions).forEach(([id, session]) => {
+          const card = document.createElement("div");
+          card.className = "plan-card";
+
+          const date = session.date ? new Date(session.date).toLocaleDateString() : "No date";
+          const drills = session.drills ? session.drills.length : 0;
+
+          card.innerHTML = `
+            <div class="plan-name">${session.name || "Untitled Plan"}</div>
+            <div class="plan-info">
+              ${drills} drill${drills !== 1 ? "s" : ""} • ${date}
+            </div>
+            <div class="plan-actions">
+              <button class="plan-btn" data-id="${id}" data-action="open">Open</button>
+              <button class="plan-btn" data-id="${id}" data-action="delete">Delete</button>
+            </div>
+          `;
+
+          card.querySelectorAll(".plan-btn").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+              const action = e.target.dataset.action;
+              if (action === "open") {
+                // Open the planner with this session
+                window.location.href = `soccer-field-planner.html?session=${id}`;
+              } else if (action === "delete") {
+                if (confirm("Delete this plan?")) {
+                  delete sessions[id];
+                  localStorage.setItem("sessions", JSON.stringify(sessions));
+                  loadPlans();
+                }
+              }
+            });
+          });
+
+          plansGrid.appendChild(card);
+        });
+      } catch (e) {
+        console.error("Error loading plans:", e);
+        emptyState.style.display = "block";
+      }
+    }
+
+    // Load plans on page load
+    loadPlans();
+
+    // Refresh plans when returning from planner
+    window.addEventListener("focus", loadPlans);
+  </script>
+</body>
+</html>

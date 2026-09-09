@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1032" height="566" viewBox="0 0 1032 566">
+  <defs>
+    <linearGradient id="grass-big" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d5016"></stop><stop offset="100%" stop-color="#3a6b1f"></stop>
+    </linearGradient>
+    <!-- Just the 1-yard lines. Cell centres and line midpoints are still live
+         snap targets — they are simply not drawn, because a tick at every
+         half yard turns the pitch into graph paper. -->
+    <pattern id="grid-big" x="10" y="10" width="3" height="3" patternUnits="userSpaceOnUse">
+      <path d="M 3 0 L 0 0 0 3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.2"></path>
+    </pattern>
+    <marker id="arw-big" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24"></path>
+    </marker>
+  </defs>
+  <!-- .stop-hit is an invisible click target that the app makes transparent from
+       its stylesheet. This sheet carries only the markup, so without the rule it
+       would paint as a solid black disc over every stop. -->
+  <style>.stop-hit{fill:transparent}</style>
+  <defs><clipPath id="cp0"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp1"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp2"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp3"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp4"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp5"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp6"><rect x="0" y="0" width="232" height="196"/></clipPath><clipPath id="cp7"><rect x="0" y="0" width="232" height="196"/></clipPath></defs>
+  <rect width="100%" height="100%" fill="#0f1c14"/>
+  <text x="16" y="26" fill="#cfe8d6" font-family="sans-serif" font-size="17" font-weight="700">Player facing and footedness — real app markup, after the ball has arrived</text><g transform="translate(16 50)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp0)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i1" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i2" data-type="playerBlue" transform="translate(170.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.46" x2="168.55" y2="117.17" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="167.04999999999998" cy="114.75" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="167.04999999999998" y="115.4" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="167.04999999999998" cy="114.75" r="2.6"></circle>
+     </g><circle cx="169.98" cy="118.78" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="169.98" cy="118.78" r="0.25" fill="#fbbf24"></circle><circle cx="169.45" cy="117.15" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="169.45" cy="117.15" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="169.45" cy="117.15" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">facing up (0°)</text>
+    </g><g transform="translate(266 50)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp1)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i3" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i4" data-type="playerBlue" transform="translate(170.5 119.5) rotate(90)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.48" x2="171.95" y2="118.46" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="170.45" cy="116.05" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="170.45" y="116.7" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="170.45" cy="116.05" r="2.6"></circle>
+     </g><circle cx="171.22" cy="118.98" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="171.22" cy="118.98" r="0.25" fill="#fbbf24"></circle><circle cx="172.85" cy="118.45" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="172.85" cy="118.45" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="172.85" cy="118.45" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">facing right (90°)</text>
+    </g><g transform="translate(516 50)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp2)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i5" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i6" data-type="playerBlue" transform="translate(170.5 119.5) rotate(180)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.54" x2="168.55" y2="121.83" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="167.04999999999998" cy="119.44999999999999" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="167.04999999999998" y="120.1" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="167.04999999999998" cy="119.44999999999999" r="2.6"></circle>
+     </g><circle cx="169.98" cy="120.22" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="169.98" cy="120.22" r="0.25" fill="#fbbf24"></circle><circle cx="169.45" cy="121.85" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="169.45" cy="121.85" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="169.45" cy="121.85" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">facing down (180°)</text>
+    </g><g transform="translate(766 50)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp3)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i7" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i8" data-type="playerBlue" transform="translate(170.5 119.5) rotate(270)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.52" x2="167.25" y2="120.54" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="165.75" cy="118.14999999999999" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="165.75" y="118.8" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="165.75" cy="118.14999999999999" r="2.6"></circle>
+     </g><circle cx="169.78" cy="120.02" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="169.78" cy="120.02" r="0.25" fill="#fbbf24"></circle><circle cx="168.15" cy="120.55" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="168.15" cy="120.55" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="168.15" cy="120.55" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">facing left (270°)</text>
+    </g><g transform="translate(16 300)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp4)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i9" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i10" data-type="playerBlue" transform="translate(170.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.46" x2="168.55" y2="117.17" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="167.04999999999998" cy="114.75" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="167.04999999999998" y="115.4" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="167.04999999999998" cy="114.75" r="2.6"></circle>
+     </g><circle cx="169.98" cy="118.78" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="169.98" cy="118.78" r="0.25" fill="#fbbf24"></circle><circle cx="169.45" cy="117.15" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="169.45" cy="117.15" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="169.45" cy="117.15" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">auto-picked: the near foot</text>
+    </g><g transform="translate(266 300)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp5)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i11" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i12" data-type="playerBlue" transform="translate(170.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.46" x2="170.65" y2="117.17" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="169.15" cy="114.75" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="169.15" y="115.4" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="169.15" cy="114.75" r="2.6"></circle>
+     </g><circle cx="171.02" cy="118.78" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="171.02" cy="118.78" r="0.25" fill="#fbbf24"></circle><circle cx="171.55" cy="117.15" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="171.55" cy="117.15" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="171.55" cy="117.15" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">shift-click → the other foot</text>
+    </g><g transform="translate(516 300)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp6)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i13" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i14" data-type="playerBlue" transform="translate(170.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.50" x2="168.50" y2="119.50" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="168.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="168.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="168.1" cy="117.1" r="2.6"></circle>
+     </g><circle cx="170.5" cy="119.5" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="170.5" cy="119.5" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="170.5" cy="119.5" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">again → either foot (centre)</text>
+    </g><g transform="translate(766 300)">
+      <rect width="240" height="240" rx="8" fill="#16351f" stroke="#2f5c3c"/>
+      <g transform="translate(9 9)" clip-path="url(#cp7)">
+        <rect width="232" height="196" fill="#2f7a44"/>
+        <g transform="translate(116 98) scale(12.8889) translate(-170.5 -119.5)"><g class="item" data-id="i15" data-type="playerBlue" transform="translate(59.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">1</text></g><g class="item" data-id="i16" data-type="playerBlue" transform="translate(170.5 119.5) rotate(0)"><circle cx="0" cy="0" r="1.8" fill="transparent"></circle>
+          <path d="M 0 -1.40
+   C 0.92 -1.28, 1.40 -0.62, 1.40 0
+   A 1.40 1.40 0 0 1 -1.40 0
+   C -1.40 -0.62, -0.92 -1.28, 0 -1.40 Z" fill="#2563eb" stroke="rgba(0,0,0,0.55)" stroke-width="0.16" stroke-linejoin="round"></path>
+          <circle cx="-0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle><circle cx="0.520" cy="-0.72" r="0.25" fill="#ffffff" fill-opacity="0.78"></circle>
+          <text x="0" y="0.95" text-anchor="middle" font-family="sans-serif" font-size="1.6" font-weight="700" fill="#ffffff">2</text></g><line x1="61.50" y1="119.46" x2="168.55" y2="117.17" stroke="#fbbf24" stroke-width="0.55" stroke-dasharray="2 1.6" stroke-linecap="round" marker-end="url(#arw-big)" opacity="0.95"></line><g data-stop="0">
+       <circle cx="57.1" cy="117.1" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="57.1" y="117.75" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">1</text>
+       <circle class="stop-hit" cx="57.1" cy="117.1" r="2.6"></circle>
+     </g><g data-stop="1">
+       <circle cx="167.04999999999998" cy="114.75" r="1.6" fill="#fbbf24" stroke="rgba(0,0,0,0.5)" stroke-width="0.2"></circle>
+       <text x="167.04999999999998" y="115.4" text-anchor="middle" font-family="sans-serif" font-size="2.2" font-weight="700" fill="#3b2600">2</text>
+       <circle class="stop-hit" cx="167.04999999999998" cy="114.75" r="2.6"></circle>
+     </g><circle cx="169.98" cy="118.78" r="0.61" fill="none" stroke="#fbbf24" stroke-width="0.28" opacity="0.9"></circle>
+          <circle cx="169.98" cy="118.78" r="0.25" fill="#fbbf24"></circle><circle cx="169.45" cy="117.15" r="1.5" fill="rgba(0,0,0,0.35)" opacity="0.5"></circle>
+          <circle cx="169.45" cy="117.15" r="1.15" fill="#ffffff" stroke="#1a1a1a" stroke-width="0.28"></circle>
+          <circle cx="169.45" cy="117.15" r="0.42" fill="#1a1a1a"></circle></g>
+      </g>
+      <text x="120" y="230" text-anchor="middle" fill="#cfe8d6"
+            font-family="sans-serif" font-size="14">and again → back to the near foot</text>
+    </g></svg>
