@@ -73,19 +73,25 @@ too.
 2. **Pause** for a stoppage if you want the clock to hold (e.g. a long
    injury delay), **Resume** when play restarts, and **End period 1** /
    **Start period 2** at halftime.
-3. **Tag an action** the moment it happens, in four quick taps - the time is
-   locked in on the very first one:
-   1. Tap the **player** who did it (both rosters are shown at once, no
-      separate team step - or type their shirt number, see shortcuts below).
-   2. Tap the **pitch** for where it happened, or **Skip location** if you
-      don't have a free second.
-   3. Tap what it was: **Pass**, **Shot**, **Corner**, or **Other**.
-   4. Finish it with one more tap: who received the pass (or Incomplete /
-      Out of play), the shot's outcome (Goal, Saved, Off Target, Blocked,
-      Post, Wayward), or a quick label for anything else (foul committed,
-      foul won, interception, ...).
-   The event saves itself the instant you finish step 4 - no separate Save
-   button - and you're straight back at step 1 for the next one.
+3. **Tag an action.** The pitch, both rosters, and the action buttons are
+   **all on screen together at all times** - a soccer game doesn't pause for
+   a wizard, so nothing here ever hides the field to show you something
+   else. Tap in whatever order matches what you actually saw happen:
+   - Tap the **player** who did it (both rosters shown at once, no separate
+     team step - or type their shirt number, see shortcuts below).
+   - Tap the **pitch** for where it happened. Optional, and works before or
+     after picking the player.
+   - Tap what it was: **Pass**, **Shot**, **Corner**, or **Other**.
+   - Once a type is picked, a finish row appears below it - who received the
+     pass (or Incomplete / Out of play), the shot's outcome (Goal, Saved,
+     Off Target, Blocked, Post, Wayward), or a quick label for anything else
+     (foul committed, foul won, interception, ...).
+   The event's time is locked in the moment you tap any one of these for a
+   new action - so even if you pick the type and location first and only
+   get to the player a few seconds later, the timestamp is still accurate.
+   It saves itself the instant you tap the finish button - no separate Save
+   button - and everything clears, ready for the next one, with the pitch
+   never leaving view.
 4. The **event timeline** below lists everything you've tagged, most recent
    first. Click a row to open the full detailed editor - body part, pass
    height, play pattern, notes, and so on - for whenever you have a spare
