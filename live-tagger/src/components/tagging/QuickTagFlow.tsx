@@ -3,7 +3,7 @@ import type { EventType, Match, PassOutcome, PassType, PitchLocation, ShotOutcom
 import type { useLiveClock } from "../../hooks/useLiveClock";
 import { addEvent } from "../../db/eventRepo";
 import { elapsedToMatchClock } from "../../utils/time";
-import SoccerPitch, { type PitchMarker } from "../pitch/SoccerPitch";
+import SoccerPitch, { type PitchArrow, type PitchMarker } from "../pitch/SoccerPitch";
 
 const SHOT_OUTCOMES: ShotOutcome[] = ["Goal", "Saved", "Off Target", "Blocked", "Post", "Wayward"];
 const SHOT_OUTCOME_COLOR: Record<ShotOutcome, string> = {
@@ -47,6 +47,7 @@ export default function QuickTagFlow({ match, clock }: Props) {
   const [teamId, setTeamId] = useState<string | null>(null);
   const [playerId, setPlayerId] = useState<string | null>(null);
   const [location, setLocation] = useState<PitchLocation | undefined>(undefined);
+  const [endLocation, setEndLocation] = useState<PitchLocation | undefined>(undefined);
   const [type, setType] = useState<EventType | null>(null);
   const [passType, setPassType] = useState<PassType>("Open Play");
   const [period, setPeriod] = useState<number | null>(null);
@@ -66,10 +67,16 @@ export default function QuickTagFlow({ match, clock }: Props) {
     setTeamId(null);
     setPlayerId(null);
     setLocation(undefined);
+    setEndLocation(undefined);
     setType(null);
     setPassType("Open Play");
     setPeriod(null);
     setElapsedSeconds(null);
+  }
+
+  function clearLocation() {
+    setLocation(undefined);
+    setEndLocation(undefined);
   }
 
   function pickPlayer(pid: string, tid: string) {
@@ -78,9 +85,17 @@ export default function QuickTagFlow({ match, clock }: Props) {
     setTeamId(tid);
   }
 
+  // First tap sets where it started, second tap sets where it ended (so the
+  // pitch can draw the actual line of the pass/shot). A third tap starts a
+  // fresh pair, in case the first two were wrong.
   function pickLocation(loc: PitchLocation) {
     ensureStarted();
-    setLocation(loc);
+    if (!location) setLocation(loc);
+    else if (!endLocation) setEndLocation(loc);
+    else {
+      setLocation(loc);
+      setEndLocation(undefined);
+    }
   }
 
   function pickType(t: EventType, corner = false) {
@@ -107,7 +122,7 @@ export default function QuickTagFlow({ match, clock }: Props) {
       playPattern: passType === "Corner" ? "From Corner" : "Regular Play",
       underPressure: false,
       type: "pass",
-      pass: { endLocation: location ?? { x: 60, y: 40 }, outcome, recipientId, passType },
+      pass: { endLocation: endLocation ?? location ?? { x: 60, y: 40 }, outcome, recipientId, passType },
     });
     setLastSaved(`${passType === "Corner" ? "Corner" : "Pass"} - ${outcome}`);
     resetAll();
@@ -124,7 +139,7 @@ export default function QuickTagFlow({ match, clock }: Props) {
       playPattern: "Regular Play",
       underPressure: false,
       type: "shot",
-      shot: { endLocation: location ?? { x: 120, y: 40 }, outcome, shotType: "Open Play", firstTime: false },
+      shot: { endLocation: endLocation ?? location ?? { x: 120, y: 40 }, outcome, shotType: "Open Play", firstTime: false },
     });
     setLastSaved(`Shot - ${outcome}`);
     resetAll();
@@ -186,7 +201,12 @@ export default function QuickTagFlow({ match, clock }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.homeTeam, match.awayTeam]);
 
-  const pitchMarkers: PitchMarker[] = location && team ? [{ id: "loc", location, color: team.color, radius: 2 }] : [];
+  const pitchColor = team?.color ?? "#facc15";
+  const pitchMarkers: PitchMarker[] = [];
+  if (location) pitchMarkers.push({ id: "start", location, color: pitchColor, radius: 2 });
+  if (endLocation) pitchMarkers.push({ id: "end", location: endLocation, color: pitchColor, shape: "ring", radius: 1.6 });
+  const pitchArrows: PitchArrow[] =
+    location && endLocation ? [{ id: "line", from: location, to: endLocation, color: pitchColor }] : [];
 
   return (
     <div className="card col" style={{ gap: "var(--space-3)" }}>
@@ -205,7 +225,8 @@ export default function QuickTagFlow({ match, clock }: Props) {
           ) : (
             <span className="muted">No player yet</span>
           )}
-          {location && <span className="badge" style={{ marginLeft: 8 }}>Location set</span>}
+          {location && !endLocation && <span className="badge" style={{ marginLeft: 8 }}>Start set - tap again for where it ended</span>}
+          {location && endLocation && <span className="badge" style={{ marginLeft: 8 }}>Start + end set</span>}
           {type && <span className="badge" style={{ marginLeft: 8 }}>{type === "pass" && passType === "Corner" ? "Corner" : type}</span>}
         </span>
         {(player || location || type) && (
@@ -216,7 +237,17 @@ export default function QuickTagFlow({ match, clock }: Props) {
       </div>
 
       <div style={{ maxWidth: 520 }}>
-        <SoccerPitch onPitchClick={pickLocation} markers={pitchMarkers} />
+        <SoccerPitch onPitchClick={pickLocation} markers={pitchMarkers} arrows={pitchArrows} />
+        <div className="row" style={{ justifyContent: "space-between", marginTop: 4 }}>
+          <span className="muted" style={{ fontSize: "0.8rem" }}>
+            Tap where it started, then tap again for where it ended - optional, tap a 3rd time to redo.
+          </span>
+          {location && (
+            <button type="button" className="small ghost" onClick={clearLocation}>
+              Clear location
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="col" style={{ gap: "var(--space-2)" }}>

@@ -79,8 +79,13 @@ too.
    else. Tap in whatever order matches what you actually saw happen:
    - Tap the **player** who did it (both rosters shown at once, no separate
      team step - or type their shirt number, see shortcuts below).
-   - Tap the **pitch** for where it happened. Optional, and works before or
-     after picking the player.
+   - Tap the **pitch** for where it started, then tap again for where it
+     ended - that draws the actual line of the pass or shot, so the pitch
+     always shows real movement, not just a dot. Both taps are optional
+     (tap a 3rd time to redo), and work before or after picking the player.
+     Every location is stored as an `{x, y}` coordinate pair in StatsBomb's
+     pitch space (0-120 long, 0-80 across) - what you tap is exactly what's
+     saved and exported, no rounding or conversion.
    - Tap what it was: **Pass**, **Shot**, **Corner**, or **Other**.
    - Once a type is picked, a finish row appears below it - who received the
      pass (or Incomplete / Out of play), the shot's outcome (Goal, Saved,
