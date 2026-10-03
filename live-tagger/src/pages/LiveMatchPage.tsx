@@ -5,11 +5,12 @@ import { db } from "../db/db";
 import { useLiveClock } from "../hooks/useLiveClock";
 import LiveClockPanel from "../components/live/LiveClockPanel";
 import ShortcutsHelp from "../components/live/ShortcutsHelp";
+import QuickTagFlow from "../components/tagging/QuickTagFlow";
 import EventForm from "../components/tagging/EventForm";
 import EventTimeline from "../components/tagging/EventTimeline";
 import type { PendingDraft } from "../components/tagging/pendingDraft";
-import { addEvent, deleteEvent, listEventsForMatch, updateEvent } from "../db/eventRepo";
-import type { EventType, MatchEvent, NewMatchEvent } from "../types";
+import { deleteEvent, listEventsForMatch, updateEvent } from "../db/eventRepo";
+import type { MatchEvent, NewMatchEvent } from "../types";
 
 export default function LiveMatchPage() {
   const { matchId } = useParams<{ matchId: string }>();
@@ -17,46 +18,28 @@ export default function LiveMatchPage() {
   const events = useLiveQuery(() => (matchId ? listEventsForMatch(matchId) : []), [matchId]) ?? [];
   const clock = useLiveClock(match);
 
-  const [draft, setDraft] = useState<PendingDraft | null>(null);
   const [editingEvent, setEditingEvent] = useState<MatchEvent | null>(null);
   const [showHelp, setShowHelp] = useState(false);
 
-  const tagNow = useCallback(
-    (type: EventType) => {
-      setEditingEvent(null);
-      setDraft({ type, period: clock.activePeriod, elapsedSeconds: clock.elapsedSecondsFor(clock.activePeriod) });
-    },
-    [clock],
-  );
-
   const cancelAll = useCallback(() => {
-    setDraft(null);
     setEditingEvent(null);
     setShowHelp(false);
   }, []);
 
-  // Keyboard shortcuts for starting a tag, disabled while typing into a field.
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       const el = e.target as HTMLElement | null;
       if (el && ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName)) return;
-      if (e.key === "p" || e.key === "P") tagNow("pass");
-      else if (e.key === "s" || e.key === "S") tagNow("shot");
-      else if (e.key === "?") setShowHelp((v) => !v);
+      if (e.key === "?") setShowHelp((v) => !v);
       else if (e.key === "Escape") cancelAll();
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [tagNow, cancelAll]);
+  }, [cancelAll]);
 
   const editDraft: PendingDraft | null = editingEvent
     ? { type: editingEvent.type, period: editingEvent.period, elapsedSeconds: editingEvent.elapsedSeconds }
     : null;
-
-  async function handleSaveNew(event: NewMatchEvent) {
-    await addEvent(event);
-    setDraft(null);
-  }
 
   async function handleSaveEdit(event: NewMatchEvent) {
     if (!editingEvent) return;
@@ -88,30 +71,7 @@ export default function LiveMatchPage() {
 
       <LiveClockPanel match={match} clock={clock} />
 
-      <div className="card">
-        <h4 style={{ marginTop: 0 }}>Tag an action</h4>
-        <div className="row wrap">
-          <button className="primary" onClick={() => tagNow("pass")} style={{ fontSize: "1.1rem", padding: "16px 28px" }}>
-            Tag pass <span className="kbd">P</span>
-          </button>
-          <button className="primary" onClick={() => tagNow("shot")} style={{ fontSize: "1.1rem", padding: "16px 28px" }}>
-            Tag shot <span className="kbd">S</span>
-          </button>
-          <button onClick={() => tagNow("other")} style={{ padding: "16px 28px" }}>
-            Tag other event
-          </button>
-        </div>
-      </div>
-
-      {draft && (
-        <EventForm
-          match={match}
-          draft={draft}
-          onSave={handleSaveNew}
-          onCancel={() => setDraft(null)}
-        />
-      )}
-      {editDraft && editingEvent && (
+      {editDraft && editingEvent ? (
         <EventForm
           match={match}
           draft={editDraft}
@@ -120,6 +80,8 @@ export default function LiveMatchPage() {
           onCancel={() => setEditingEvent(null)}
           onDelete={handleDeleteEdit}
         />
+      ) : (
+        <QuickTagFlow match={match} clock={clock} />
       )}
 
       <div className="card">
@@ -128,11 +90,9 @@ export default function LiveMatchPage() {
           match={match}
           events={events}
           selectedEventId={editingEvent?.id}
-          onEdit={(e) => {
-            setDraft(null);
-            setEditingEvent(e);
-          }}
+          onEdit={(e) => setEditingEvent(e)}
         />
+        {events.length > 0 && <p className="muted">Click an event to edit its details (body part, notes, play pattern, and more).</p>}
       </div>
 
       {showHelp && <ShortcutsHelp onClose={() => setShowHelp(false)} />}

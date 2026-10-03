@@ -9,44 +9,31 @@ interface Props {
   onChange: (players: Player[]) => void;
 }
 
-export default function PlayerListEditor({ teamLabel, color, players, onChange }: Props) {
+interface SectionProps {
+  title: string;
+  players: Player[];
+  moveLabel: string;
+  onAdd: (player: Omit<Player, "id" | "isStarter">) => void;
+  onMove: (id: string) => void;
+  onRemove: (id: string) => void;
+}
+
+function RosterSection({ title, players, moveLabel, onAdd, onMove, onRemove }: SectionProps) {
   const [name, setName] = useState("");
   const [shirt, setShirt] = useState("");
   const [position, setPosition] = useState("");
-  const [isStarter, setIsStarter] = useState(true);
 
-  function addPlayer() {
+  function submit() {
     if (!name.trim()) return;
-    const player: Player = {
-      id: newId(),
-      name: name.trim(),
-      shirtNumber: shirt ? Number(shirt) : 0,
-      position: position.trim() || undefined,
-      isStarter,
-    };
-    onChange([...players, player]);
+    onAdd({ name: name.trim(), shirtNumber: shirt ? Number(shirt) : 0, position: position.trim() || undefined });
     setName("");
     setShirt("");
     setPosition("");
   }
 
-  function removePlayer(id: string) {
-    onChange(players.filter((p) => p.id !== id));
-  }
-
-  function toggleStarter(id: string) {
-    onChange(players.map((p) => (p.id === id ? { ...p, isStarter: !p.isStarter } : p)));
-  }
-
-  const starters = players.filter((p) => p.isStarter);
-  const subs = players.filter((p) => !p.isStarter);
-
   return (
-    <div className="col">
-      <div className="row">
-        <span className="team-swatch" style={{ background: color }} />
-        <h4 style={{ margin: 0 }}>{teamLabel} roster</h4>
-      </div>
+    <div className="col" style={{ gap: "var(--space-2)" }}>
+      <h5 style={{ margin: 0 }}>{title}</h5>
 
       <div className="row wrap" style={{ alignItems: "flex-end" }}>
         <div style={{ width: 90 }}>
@@ -63,7 +50,7 @@ export default function PlayerListEditor({ teamLabel, color, players, onChange }
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && addPlayer()}
+            onKeyDown={(e) => e.key === "Enter" && submit()}
             placeholder="Jane Smith"
           />
         </div>
@@ -71,44 +58,35 @@ export default function PlayerListEditor({ teamLabel, color, players, onChange }
           <label>Position (optional)</label>
           <input value={position} onChange={(e) => setPosition(e.target.value)} placeholder="CM" />
         </div>
-        <label className="row" style={{ marginBottom: 10, fontWeight: 500 }}>
-          <input
-            type="checkbox"
-            style={{ width: "auto" }}
-            checked={isStarter}
-            onChange={(e) => setIsStarter(e.target.checked)}
-          />
-          Starting XI
-        </label>
-        <button type="button" onClick={addPlayer} className="small">
-          Add player
+        <button type="button" onClick={submit} className="small">
+          Add to {title.toLowerCase()}
         </button>
       </div>
 
-      {players.length > 0 && (
+      {players.length > 0 ? (
         <table>
           <thead>
             <tr>
               <th>#</th>
               <th>Name</th>
               <th>Position</th>
-              <th>Status</th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {[...starters, ...subs].map((p) => (
+            {players.map((p) => (
               <tr key={p.id}>
                 <td>{p.shirtNumber || "-"}</td>
                 <td>{p.name}</td>
                 <td>{p.position || "-"}</td>
                 <td>
-                  <button type="button" className="small ghost" onClick={() => toggleStarter(p.id)}>
-                    {p.isStarter ? "Starter" : "Substitute"}
+                  <button type="button" className="small ghost" onClick={() => onMove(p.id)}>
+                    {moveLabel}
                   </button>
                 </td>
                 <td>
-                  <button type="button" className="small danger" onClick={() => removePlayer(p.id)}>
+                  <button type="button" className="small danger" onClick={() => onRemove(p.id)}>
                     Remove
                   </button>
                 </td>
@@ -116,8 +94,55 @@ export default function PlayerListEditor({ teamLabel, color, players, onChange }
             ))}
           </tbody>
         </table>
+      ) : (
+        <p className="muted" style={{ margin: 0 }}>
+          No {title.toLowerCase()} added yet.
+        </p>
       )}
-      {players.length === 0 && <p className="muted">No players added yet.</p>}
+    </div>
+  );
+}
+
+export default function PlayerListEditor({ teamLabel, color, players, onChange }: Props) {
+  const starters = players.filter((p) => p.isStarter);
+  const subs = players.filter((p) => !p.isStarter);
+
+  function addPlayer(isStarter: boolean, player: Omit<Player, "id" | "isStarter">) {
+    onChange([...players, { ...player, id: newId(), isStarter }]);
+  }
+
+  function toggleStarter(id: string) {
+    onChange(players.map((p) => (p.id === id ? { ...p, isStarter: !p.isStarter } : p)));
+  }
+
+  function removePlayer(id: string) {
+    onChange(players.filter((p) => p.id !== id));
+  }
+
+  return (
+    <div className="col" style={{ gap: "var(--space-3)" }}>
+      <div className="row">
+        <span className="team-swatch" style={{ background: color }} />
+        <h4 style={{ margin: 0 }}>{teamLabel} roster</h4>
+      </div>
+
+      <RosterSection
+        title="Starting XI"
+        players={starters}
+        moveLabel="Move to subs"
+        onAdd={(p) => addPlayer(true, p)}
+        onMove={toggleStarter}
+        onRemove={removePlayer}
+      />
+
+      <RosterSection
+        title="Substitutes"
+        players={subs}
+        moveLabel="Move to starters"
+        onAdd={(p) => addPlayer(false, p)}
+        onMove={toggleStarter}
+        onRemove={removePlayer}
+      />
     </div>
   );
 }

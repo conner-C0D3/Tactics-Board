@@ -58,9 +58,12 @@ npm run preview
 ### Match library
 
 Create a match via **+ New match**: match info (name/date/competition/venue,
-period lengths, who you're tagging), team names/colors, and starting
-lineups. Rename, **back up** (a JSON file you can re-import), or delete a
-match from here too.
+period lengths, who you're tagging), team names/colors, and rosters. Each
+team's roster has two separate sections - **Starting XI** and
+**Substitutes** - each with its own quick add form (shirt number, name,
+position); move a player between them any time with one click. Rename,
+**back up** (a JSON file you can re-import), or delete a match from here
+too.
 
 ### Live match page
 
@@ -70,27 +73,32 @@ match from here too.
 2. **Pause** for a stoppage if you want the clock to hold (e.g. a long
    injury delay), **Resume** when play restarts, and **End period 1** /
    **Start period 2** at halftime.
-3. **Tag an action**: click "Tag pass" or "Tag shot" (or press `P` / `S` on
-   a keyboard) the moment it happens. A form opens with the time already
-   locked in - take your time filling in the rest:
-   - Tap the **team**, then the **player** (big buttons, not a dropdown -
-     or just type the player's shirt number, see shortcuts below).
-   - Optionally tap the small pitch diagram for where it started/ended -
-     skip it if you don't have a free second, it's not required.
-   - Pick the outcome and any other detail, then **Save event**.
+3. **Tag an action** the moment it happens, in four quick taps - the time is
+   locked in on the very first one:
+   1. Tap the **player** who did it (both rosters are shown at once, no
+      separate team step - or type their shirt number, see shortcuts below).
+   2. Tap the **pitch** for where it happened, or **Skip location** if you
+      don't have a free second.
+   3. Tap what it was: **Pass**, **Shot**, **Corner**, or **Other**.
+   4. Finish it with one more tap: who received the pass (or Incomplete /
+      Out of play), the shot's outcome (Goal, Saved, Off Target, Blocked,
+      Post, Wayward), or a quick label for anything else (foul committed,
+      foul won, interception, ...).
+   The event saves itself the instant you finish step 4 - no separate Save
+   button - and you're straight back at step 1 for the next one.
 4. The **event timeline** below lists everything you've tagged, most recent
-   first. Click a row to edit or delete it.
+   first. Click a row to open the full detailed editor - body part, pass
+   height, play pattern, notes, and so on - for whenever you have a spare
+   moment to add more than the quick flow asks for. Delete it from there too.
 
-**Keyboard shortcuts** (press `?` to see this on-screen), built for speed
-when the game won't wait:
+**Keyboard shortcuts** (press `?` to see this on-screen), for picking a
+player without touching the mouse/touchscreen:
 
 | Key | Action |
 |---|---|
-| `P` | Tag a pass right now |
-| `S` | Tag a shot right now |
-| `H` / `A` | While the form is open: jump straight to the home / away team |
-| `0`-`9` | While the form is open: type a player's shirt number to select them instantly (type a 2nd digit quickly for numbers 10+) |
-| `Esc` | Cancel tagging / close the open panel |
+| `H` / `A` | When picking a player: jump to the home / away team |
+| `0`-`9` | When picking a player: type their shirt number to select them instantly (type a 2nd digit quickly for numbers 10+) |
+| `Esc` | Close the open panel |
 
 Shortcuts are automatically disabled while you're typing into a text field
 (like the Notes box).

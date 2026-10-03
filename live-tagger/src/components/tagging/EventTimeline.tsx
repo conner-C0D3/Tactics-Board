@@ -50,6 +50,7 @@ export default function EventTimeline({ match, events, onEdit, selectedEventId }
           <div
             key={event.id}
             className="row"
+            data-testid="event-row"
             style={{
               padding: "6px 8px",
               borderRadius: "var(--radius)",

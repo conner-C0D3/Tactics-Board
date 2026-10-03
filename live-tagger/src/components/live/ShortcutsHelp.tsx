@@ -4,12 +4,10 @@ interface Shortcut {
 }
 
 const SHORTCUTS: Shortcut[] = [
-  { keys: "P", description: "Start tagging a pass, right now, on the live clock" },
-  { keys: "S", description: "Start tagging a shot, right now, on the live clock" },
-  { keys: "H  /  A", description: "In the open form: jump to the home / away team" },
-  { keys: "0-9", description: "In the open form: type a shirt number to select that player" },
+  { keys: "H  /  A", description: "When picking a player: jump to the home / away team" },
+  { keys: "0-9", description: "When picking a player: type a shirt number to select them instantly" },
   { keys: "?", description: "Toggle this help" },
-  { keys: "Esc", description: "Cancel tagging / close the open panel" },
+  { keys: "Esc", description: "Close the open panel" },
 ];
 
 interface Props {

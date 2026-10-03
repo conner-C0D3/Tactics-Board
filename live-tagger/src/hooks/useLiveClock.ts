@@ -5,7 +5,12 @@ import { updateMatch } from "../db/matchRepo";
 function elapsedFor(clock: PeriodClockState | undefined, nowMs: number): number {
   if (!clock) return 0;
   if (clock.status === "running" && clock.startedAtEpochMs !== undefined) {
-    return clock.accumulatedSeconds + (nowMs - clock.startedAtEpochMs) / 1000;
+    // `nowMs` only refreshes every 250ms (see the interval below), so right after
+    // starting a period it can still hold a timestamp from *before*
+    // startedAtEpochMs, making this briefly negative. Floored downstream (in
+    // elapsedToMatchClock), a negative fraction of a second becomes -1 instead
+    // of 0 - clamp here so elapsed time is never negative.
+    return Math.max(0, clock.accumulatedSeconds + (nowMs - clock.startedAtEpochMs) / 1000);
   }
   return clock.accumulatedSeconds;
 }
